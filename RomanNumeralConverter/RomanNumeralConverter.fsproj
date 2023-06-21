@@ -6,7 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Program.fs"/>
+        <Compile Include="RomanTypes.fs" />
+        <Compile Include="RomanDigitConverter.fs" />
+        <Compile Include="Program.fs" />
     </ItemGroup>
 
 </Project>
