@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleCmdArgsParser", "SimpleCmdArgsParser\SimpleCmdArgsParser.fsproj", "{54105511-EC51-49F1-8068-505BD84B5EC0}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RomanNumeralConverter", "RomanNumeralConverter\RomanNumeralConverter.fsproj", "{144E1664-A9EF-4305-AF2E-49BAA8431F57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{54105511-EC51-49F1-8068-505BD84B5EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54105511-EC51-49F1-8068-505BD84B5EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54105511-EC51-49F1-8068-505BD84B5EC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{144E1664-A9EF-4305-AF2E-49BAA8431F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{144E1664-A9EF-4305-AF2E-49BAA8431F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{144E1664-A9EF-4305-AF2E-49BAA8431F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{144E1664-A9EF-4305-AF2E-49BAA8431F57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
