@@ -9,6 +9,7 @@
         <Compile Include="RomanTypes.fs" />
         <Compile Include="RomanDigitConverter.fs" />
         <Compile Include="CharConverter.fs" />
+        <Compile Include="RomanNumberValidator.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
