@@ -11,34 +11,12 @@ module Program =
     let main argv =
 
         // test valid
-        let validList =
-            [ [ I; I; I; I ]
-              [ I; V ]
-              [ I; X ]
-              [ I; X; V ]
-              [ V; X ]
-              [ X; I; V ]
-              [ X; I; X ]
-              [ X; X; I; I ] ]
+        let validList = [ "IIII"; "XIV"; "MMDXC"; "IIXX"; "VV" ]
 
-        let testValid = validList |> List.map isValidDigitList
-
-        let invalidList =
-            [
-              // Five in a row of any digit is not allowed
-              [ I; I; I; I; I ]
-              // Two in a row for V,L, D is not allowed
-              [ V; V ]
-              [ L; L ]
-              [ D; D ]
-              // runs of 2,3,4 in the middle are invalid if next digit is higher
-              [ I; I; V ]
-              [ X; X; X; M ]
-              [ C; C; C; C; D ]
-              // three ascending numbers in a row is invalid
-              [ I; V; X ]
-              [ X; L; D ] ]
-
-        let testInvalid = invalidList |> List.map isValidDigitList
+        validList
+        |> List.map toRomanNumeral
+        |> List.iter (function
+            | n when isValidDigitList n -> printfn "%A is valid and its integer value is %i" n (toInt n)
+            | n -> printfn "%A is not valid" n)
 
         0
