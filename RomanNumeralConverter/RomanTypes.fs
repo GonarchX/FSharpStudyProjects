@@ -8,5 +8,6 @@ type RomanDigit =
     | C
     | D
     | M
+    | BadDigit // for unexpected roman digit
 
 type RomanNumeral = RomanNumeral of RomanDigit list
