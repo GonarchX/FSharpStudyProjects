@@ -8,13 +8,19 @@ module Program =
 
     [<EntryPoint>]
     let main argv =
-        let x = [ M; C; M; L; X; X; I; X;]
+        // test good cases
 
-        x |> toInt |> (fun x -> printfn $"{x}")
+        "IIII"  |> toRomanNumeral
+        "IV"  |> toRomanNumeral
+        "VI"  |> toRomanNumeral
+        "IX"  |> toRomanNumeral
+        "MCMLXXIX"  |> toRomanNumeral
+        "MCMXLIV" |> toRomanNumeral
+        "" |> toRomanNumeral
 
-        let y = "MCMLXXIX"
-        stringToRomanNumeral y |> toInt |> (fun x -> printfn $"{x}")
+        // error cases
+        "MC?I" |> toRomanNumeral
+        "abc" |> toRomanNumeral
+
         
-        let y = "It raise exception"
-        stringToRomanNumeral y |> toInt |> (fun x -> printfn $"{x}")
         0

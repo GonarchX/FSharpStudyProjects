@@ -2,21 +2,28 @@ module RomanNumeralConverter.CharConverter
 
 open RomanNumeralConverter.RomanTypes
 
+type ParsedChar =
+    | Digit of RomanDigit
+    | BadChar of char
+
 let charToRomanDigit =
     function
-    | 'I' -> RomanDigit.I
-    | 'V' -> V
-    | 'X' -> X
-    | 'L' -> L
-    | 'C' -> C
-    | 'D' -> D
-    | 'M' -> M
-    | _ -> BadDigit
+    | 'I' -> Digit I
+    | 'V' -> Digit V
+    | 'X' -> Digit X
+    | 'L' -> Digit L
+    | 'C' -> Digit C
+    | 'D' -> Digit D
+    | 'M' -> Digit M
+    | ch -> BadChar ch
 
-let rec stringToRomanNumeralRec (acc: RomanDigit list) rest =
-    match rest with
-    | cur :: rest -> stringToRomanNumeralRec (acc @ [ charToRomanDigit cur ]) rest
-    | _ -> acc
+let toRomanDigitList (s: string) =
+    s.ToCharArray() |> List.ofArray |> List.map charToRomanDigit
 
-let rec stringToRomanNumeral stringRomanNumeral =
-    stringToRomanNumeralRec [] (Seq.toList stringRomanNumeral)
+let toRomanNumeral s =
+    toRomanDigitList s
+    |> List.choose (function
+        | Digit digit -> Some digit
+        | BadChar ch ->
+            eprintfn $"{ch} - Problem character"
+            None)
